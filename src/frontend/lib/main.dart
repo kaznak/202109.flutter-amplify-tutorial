@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
                     MaterialPage(
                         child: SignUpPage(
                             didProvideCredentials:
-                                _authService.loginWithCredentials,
+                                _authService.signUpWithCredentials,
                             shouldShowLogin: _authService.showLogin)),
 
                   // Show Verification Code Page
