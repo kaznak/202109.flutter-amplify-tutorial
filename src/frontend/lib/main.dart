@@ -46,7 +46,9 @@ class _MyAppState extends State<MyApp> {
                   // 5
                   // Show Sign Up Page
                   if (snapshot.data!.authFlowStatus == AuthFlowStatus.signUp)
-                    MaterialPage(child: SignUpPage())
+                    MaterialPage(
+                        child:
+                            SignUpPage(shouldShowLogin: _authService.showLogin))
                 ],
                 onPopPage: (route, result) => route.didPop(result),
               );
