@@ -1,4 +1,3 @@
-
 # Flutter Amplify Tutorial
 
 [AWS の開始方法
