@@ -3,6 +3,7 @@ import 'login_page.dart';
 import 'sign_up_page.dart';
 import 'auth_service.dart';
 import 'verification_page.dart';
+import 'camera_flow.dart';
 
 void main() {
   runApp(MyApp());
@@ -61,7 +62,12 @@ class _MyAppState extends State<MyApp> {
                     MaterialPage(
                         child: VerificationPage(
                             didProvideVerificationCode:
-                                _authService.verifyCode))
+                                _authService.verifyCode)),
+
+                  // Show Camera Flow
+                  if (snapshot.data!.authFlowStatus == AuthFlowStatus.session)
+                    MaterialPage(
+                        child: CameraFlow(shouldLogOut: _authService.logOut))
                 ],
                 onPopPage: (route, result) => route.didPop(result),
               );
