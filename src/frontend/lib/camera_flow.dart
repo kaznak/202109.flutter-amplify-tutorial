@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'gallery_page.dart';
 
 class CameraFlow extends StatefulWidget {
   // 1
@@ -18,7 +19,10 @@ class _CameraFlowState extends State<CameraFlow> {
   List<MaterialPage> get _pages {
     return [
       // Show Gallery Page
-      MaterialPage(child: Placeholder()),
+      MaterialPage(
+          child: GalleryPage(
+              shouldLogOut: widget.shouldLogOut,
+              shouldShowCamera: () => _toggleCameraOpen(true))),
 
       // Show Camera Page
       if (_shouldShowCamera) MaterialPage(child: Placeholder())
