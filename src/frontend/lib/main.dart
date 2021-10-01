@@ -39,7 +39,9 @@ class _MyAppState extends State<MyApp> {
                   // 4
                   // Show Login Page
                   if (snapshot.data!.authFlowStatus == AuthFlowStatus.login)
-                    MaterialPage(child: LoginPage()),
+                    MaterialPage(
+                        child: LoginPage(
+                            shouldShowSignUp: _authService.showSignUp)),
 
                   // 5
                   // Show Sign Up Page
